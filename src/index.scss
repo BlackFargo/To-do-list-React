@@ -1,0 +1,27 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--main-background);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.container {
+	width: 600px;
+	max-height: 100vh;
+	min-height: 400px;
+	border-radius: 18px;
+	background-color: var(--background);
+	margin: 20px;
+
+	@media (max-width: 620px) {
+		
+		max-width: 600px;
+		width: 100%;
+	}
+}

@@ -1,0 +1,103 @@
+.list {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	
+
+	padding: 20px;
+	font-size: 20px;
+	row-gap: 10px;
+
+	&__item {
+		display: flex;
+		align-items: center;
+		background-color: var(--main-background);
+
+		border-radius: 10px;
+		padding: 10px;
+		justify-content: space-between;
+		word-break: break-all;
+
+		@media (max-width: 620px) {
+			flex-direction: column;
+			row-gap: 15px;
+			justify-content: baseline;
+		}
+	}
+}
+
+.delete {
+	width: 30px;
+	height: 30px;
+	background-color: var(--background);
+	border: 0;
+	border-radius: 50%;
+	cursor: pointer;
+	color: white;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.edit,
+.save {
+	width: 100px;
+	height: 30px;
+	background-color: var(--background);
+	border: 0;
+	border-radius: 10px;
+	cursor: pointer;
+	color: white;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.actions {
+	display: flex;
+	column-gap: 20px;
+}
+
+.save_input {
+	background-color: var(--background);
+	color: white;
+	border: none;
+	height: 30px;
+	font-size: 18px;
+}
+
+
+
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--background);
+	border: none;
+	cursor: pointer;
+}
+.list__item_text {
+  position: relative;
+  cursor: pointer; 
+  transition: color 0.3s ease, opacity 0.3s ease; 
+	margin-right: 12px;
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: #000; /* Цвет линии зачёркивания */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: width 0.3s ease;
+  }
+
+  &.done {
+    color: #aaa; /* Цвет для выполненной задачи */
+    text-decoration: line-through; /* Зачёркивание текста */
+    
+    &::before {
+      width: 100%; /* При добавлении класса, линия растягивается на 100% */
+    }
+  }
+}
